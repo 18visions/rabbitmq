@@ -24,3 +24,8 @@ end
 service 'rabbitmq-server' do
   action [:enable, :start]
 end
+
+execute 'enable rabbitmq plugin - prometheus' do
+  command 'sudo rabbitmq-plugins enable rabbitmq_prometheus'
+  action :run
+end
